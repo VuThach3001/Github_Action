@@ -13,7 +13,7 @@
 ### Notes Section (Main Notes)
 
 **1. Working with Commits (Code Snapshots)**
-- Undo Commits:
+- **Undo Commits**:
   - Revert the changes of commit <id> (by creating a new commit)
 ```cmd
 git revert <id>

@@ -13,12 +13,12 @@
 ### Notes Section (Main Notes)
 
 **1. Working with Commits (Code Snapshots)**
-- Undo Commits:
+- **Undo Commits**:
   - Revert the changes of commit `<id>` (by creating a new commit)
 ```cmd
 git revert <id>
 ```
-  - Undo changes by deleting all commits since `<id>` (does not create a new commit)
+  - **Undo changes** by deleting all commits since `<id>` (does not create a new commit)
 ```cmd
 git reset --hard <id>
 ```
