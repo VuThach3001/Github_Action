@@ -63,6 +63,33 @@ jobs:
       - name: Run tests
         run: npm test
 ```
+
+**5. Configure working directory**
+- If your code is located in a subdirectory of the repository, you can have some options:
+- Change the working directory for a specific step by using the `working-directory` keyword.
+  - Here is an example:
+  ```yaml
+        - name: Install dependencies
+          run: npm ci
+          working-directory: ./my-subdirectory
+  ```
+- Or you can directly set the default working directory for all steps in a job by using the `defaults` keyword.
+  - Here is an example:
+  ```yaml
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: ./my-subdirectory
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+          - name: Install dependencies
+            run: npm ci
+          - name: Run tests
+            run: npm test
+  ```
 ---
 ### Summary Section (Summary of Notes)
 
