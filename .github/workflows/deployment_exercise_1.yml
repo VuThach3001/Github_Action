@@ -1,21 +1,21 @@
 name: Deployment Exercise 1
 on: push
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: example/section-3/the_problem
-        steps:
-            - name: Get code
-                uses: actions/checkout@v4
-            - name: Install dependencies
-                run: npm ci
-            - name: Lint
-                run: npm run lint
-            - name: Test code
-                run: npm test
-            - name: Build code
-                run: npm run build
-            - name: Deploy code
-                run: echo "Deploying to server..."
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: example/section-3/the_problem
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test code
+        run: npm test
+      - name: Build code
+        run: npm run build
+      - name: Deploy code
+        run: echo "Deploying to server..."
