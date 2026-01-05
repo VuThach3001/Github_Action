@@ -69,7 +69,6 @@ jobs:
     ```yml
     needs: [test, job2, job3,...]
     ```
-  - Whenever a previous job fails, all jobs that depend on it will be skipped automatically.
 
 
 ---
