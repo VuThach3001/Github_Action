@@ -1,5 +1,10 @@
 name: Test project
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+      - test
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
