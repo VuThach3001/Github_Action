@@ -4,9 +4,17 @@ on:
     types:
       - opened
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - test
+      - 'feature/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: example/section-4
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
