@@ -12,12 +12,17 @@
 
 ### Notes Section (Main Notes)
 
-**1. A note about fork pull request workflows**
-- By default, **Pull Requests** based on **Forks** do **NOT** trigger a workflow that requires secrets.
-  - **Reason:** Everyone can fork & open pull requests.
-  - Malicious workflow runs & excess cost could be caused.
-- First-time contributors must be approved manually.
-
+**1. Cancelling & Skipping Workflow Runs**
+- **Cancelling:**
+  - By default, workflows get cancelled if **Jobs** fail.
+  - By default, a **Job** fails if at least one **Step** fails.
+  - You can also cancel workflows manually via the GitHub UI.
+- **Skipping:**
+  - By default, all matching events start a workflow.
+  - Exception for `push` & `pull_request`.
+  - Skip with proper commit message:
+    - Include `[skip ci]` or `[ci skip]` in the commit message.
+    - Example: `git commit -m "Update README [skip ci]"`
 ---
 ### Summary Section (Summary of Notes)
 
