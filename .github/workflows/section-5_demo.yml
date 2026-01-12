@@ -36,8 +36,8 @@ jobs:
         with:
           name: dist-files
           path: |
-            dist
-            package.json
+            example/section-5/dist
+            example/section-5/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
