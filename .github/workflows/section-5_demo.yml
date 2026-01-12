@@ -21,6 +21,9 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: example/section-5
     steps:
       - name: Get code
         uses: actions/checkout@v4
