@@ -1,8 +1,8 @@
 # Sections 5: Job Artifacts and Outputs
 
-## Topic: Understanding Job Artifacts
+## Topic: Downloading Artifacts (Manually and Automatically)
 
-## Date: 12/01/2025
+## Date: 23/01/2025
 
 ---
 
@@ -30,6 +30,16 @@ with:
     package.json
 ```
 - `upload-artifact` action is the extension created by GitHub team that will take care of uploading the files to GitHub server and make it available for download
+- The latest version is `v4`. If you try to use `v3`, it will get your job failed as `v3` is deprecated.
+
+**3. Download the output**
+- To download the artifacts, we can simply add a new step in our job
+```yaml
+uses: actions/download-artifact@v4
+with:
+  name: dist-files
+```
+- The name should be the same as the name used in the upload step.
 - The latest version is `v4`. If you try to use `v3`, it will get your job failed as `v3` is deprecated.
 
 ---
