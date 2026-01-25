@@ -6,8 +6,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    outputs:
-      script-file: ${{ steps.publish.outputs.script-file }}
     defaults:
       run:
         working-directory: example/section-5
@@ -23,6 +21,8 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      script-file: ${{ steps.publish.outputs.script-file }}
     defaults:
       run:
         working-directory: example/section-5 # Only affects 'run:' steps, NOT 'uses:' actions
@@ -34,7 +34,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: publish
-        run: find dist/assets/*.js -type f -execdir echo '::set-output name=script-file::{}' ';' # Relative path since we're in example/section-5
+        run: find dist/assets/*.js -type f -execdir echo 'script-file = {}' >> $GITHUB_OUTPUT ';' # Relative path since we're in example/section-5
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4 # Actions ignore working-directory, always work from repo root
         with:
