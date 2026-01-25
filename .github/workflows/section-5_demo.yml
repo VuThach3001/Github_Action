@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: example/section-5
+        working-directory: example/section-5 # Only affects 'run:' steps, NOT 'uses:' actions
     steps:
       - name: Get code
         uses: actions/checkout@v4
@@ -32,14 +32,14 @@ jobs:
       - name: Build website
         run: npm run build
       - name: Publish JS filename
-        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
+        run: find dist/assets/*.js -type f -execdir echo '{}' ';' # Relative path since we're in example/section-5
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4 # Actions ignore working-directory, always work from repo root
         with:
           name: dist-files
-          path: |
-            dist/**
-            package.json
+          path: | # Must use full path from repo root for actions
+            example/section-5/dist/**
+            example/section-5/package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
