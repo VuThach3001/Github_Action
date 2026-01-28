@@ -12,8 +12,8 @@ jobs:
         working-directory: example/section-6
     env:
       MONGODB_CLUSTER_ADDRESS: vuthach.kdc6l5v.mongodb.net
-      MONGODB_USERNAME: vuthach
-      MONGODB_PASSWORD: F8JQ47gtZ8IB54Xe
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 8080
     runs-on: ubuntu-latest
     steps:
