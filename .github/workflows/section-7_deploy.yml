@@ -84,6 +84,6 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Output contents
-        run: ls example/section-7
+        run: ls
       - name: Deploy
         run: echo "Deploying..."
