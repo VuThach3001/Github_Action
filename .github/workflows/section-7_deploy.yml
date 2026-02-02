@@ -44,15 +44,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-report
-          path: test.json
+          path: example/section-7/test.json
   deploy:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: example/section-7
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
       - name: Output contents
-        run: ls
+        run: ls example/section-7
       - name: Deploy
         run: echo "Deploying..."
