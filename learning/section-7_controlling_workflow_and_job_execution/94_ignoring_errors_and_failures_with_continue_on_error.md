@@ -26,6 +26,15 @@ jobs:
         run: npm test
         continue-on-error: true
 ```
+- On the output of the GitHub Actions run, the step will be marked as successful until we open the details, where we can see that the step actually failed.
+- This allows subsequent steps to run, such as uploading test reports.
+- There are 2 properties available to check the outcome of a step:
+  - `steps.<step_id>.outcome`: This property returns the outcome of the step, which can be 'success', 'failure', or 'skipped'. This is the result of a completed step after `continue-on-error` has been applied.
+  - `steps.<step_id>.conclusion`: This property returns the conclusion of the step, which can be 'success', 'failure', 'neutral', 'cancelled', or 'timed_out'. This is the result of the step before `continue-on-error` is applied.
+
+**3. Shall we use `if` or `continue-on-error`?**
+- If you want to run entire steps regardless of the outcome of previous steps or jobs, use `continue-on-error`.
+- If you want to conditionally run steps based on the outcome of previous steps or jobs, use `if` conditions.
 
 ### Summary Section (Summary of Notes)
 
