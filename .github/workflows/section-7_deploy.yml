@@ -93,9 +93,6 @@ jobs:
     needs: [lint, deploy]
     if: failure()
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: example/section-7
     steps:
       - name: Output information
         run: |
