@@ -3,9 +3,6 @@ on: workflow_call
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: example/section-7
     steps:
       - name: Deploy
         run: echo "Deploying application..."
