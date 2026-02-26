@@ -10,9 +10,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: example/section-7
     steps:
       - name: Get Code
         uses: actions/download-artifact@v4
