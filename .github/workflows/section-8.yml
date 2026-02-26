@@ -11,6 +11,9 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: example/section-8
     container:
       image: node:18 
     env:
