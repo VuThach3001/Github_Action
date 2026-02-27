@@ -1,4 +1,4 @@
-# Sections Jobs and Docker Containers
+# Sections 8: Jobs and Docker Containers
 
 ## Topic: What are Containers?
 

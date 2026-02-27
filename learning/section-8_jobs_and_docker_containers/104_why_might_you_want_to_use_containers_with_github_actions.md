@@ -1,4 +1,4 @@
-# Sections Jobs and Docker Containers
+# Sections 8: Jobs and Docker Containers
 
 ## Topic: Why Might you want to use Containers with GitHub Actions?
 
