@@ -2,6 +2,9 @@ name: 'Get and Cache Dependencies'
 description: 'Get the dependencies (via npm) and cache them'
 runs:
   using: 'composite'
+  defaults:
+    run:
+      working-directory: example/section-9
   steps:
     - name: Cache dependencies
       id: cache
