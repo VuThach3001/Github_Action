@@ -22,7 +22,7 @@
 - Here's how we can modify the workflow to include this dependency:
 ```yml
 name: Test project
-on: push
+on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest

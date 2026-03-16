@@ -21,7 +21,7 @@
 - Now we want to add another job called `deploy`.
 ```yml
 name: Test project
-on: push
+on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest

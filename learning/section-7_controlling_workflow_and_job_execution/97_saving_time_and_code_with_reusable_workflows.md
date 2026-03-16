@@ -29,7 +29,7 @@ jobs:
 - And the file can be called in another workflow like this:
 ```yml
 name: Main Workflow
-on: push
+on: workflow_dispatch
 jobs:
   call-reusable:
     uses: ./.github/workflows/reusable.yml

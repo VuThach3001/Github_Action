@@ -18,7 +18,7 @@
 - The `on` key in the workflow YAML file specifies the events that will trigger the workflow.
 - For example, to trigger a workflow on push events, you can use the following configuration:
 ```yml
-on: push
+on: workflow_dispatch
 ```
 - This means that the workflow will run every time a commit is pushed to the repository.
 - Most of the events are repository-related, meaning they occur within the context of a specific repository, and there you got events like `push`, `pull_request`, `issues`, etc happening.

@@ -13,7 +13,7 @@
 ### Notes Section (Main Notes)
 
 **1. Multiple triggers**
-- Thus far, we always only had one simple trigger for our workflows, e.g., `on: push`.
+- Thus far, we always only had one simple trigger for our workflows, e.g., `on: workflow_dispatch`.
 - But we instead also want to allow ourselves to manually trigger the workflow from the Actions tab in GitHub.
 - By wrapping multiple triggers in an array, we can achieve this:
 ```yml
