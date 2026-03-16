@@ -1,8 +1,8 @@
 name: Section 6 Demo
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
+  # push:
+  #   branches:
+  #     - main
 env:
   MONGODB_DB_NAME: gha-demo
 jobs:
